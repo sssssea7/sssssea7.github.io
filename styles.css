@@ -1,13 +1,27 @@
-nav {
-    position: fixed;
-    background-color: #ffc6c6;
-    overflow: hidden;
-    width: 110%; 
+/* Responsive base */
+html {
     box-sizing: border-box;
-    margin-left: -10px;
-    margin-top: -10px;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 60px 16px 24px;
+    overflow-x: hidden;
 }
 
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #ffc6c6;
+    overflow: hidden;
+    z-index: 100;
+}
 nav a {
     float: left;
     display: block;
@@ -22,7 +36,82 @@ nav a:hover {
     background-color: #ddd;
     color: black;
 }
-/* body {
-    margin-left: 20px;
-    margin-right: 20px;
-} */
+
+/* Home intro: profile photo + text — wraps on narrow screens */
+.intro {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.intro img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Project figures and captions */
+.project-figure {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto;
+}
+.project-figure-sm {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+}
+.project-caption {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto 8px;
+}
+.project-caption-sm {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto 8px;
+}
+
+/* Social icons (inline with email) */
+.social-links {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+    text-decoration: none;
+}
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.social-links a:hover .social-icon,
+.social-links a:focus-visible .social-icon {
+    opacity: 0.75;
+    transform: translateY(-1px);
+}
+.social-scholar { color: #4285F4; }
+.social-linkedin { color: #0A66C2; }
+
+@media (max-width: 600px) {
+    body {
+        padding: 56px 12px 24px;
+    }
+    nav a {
+        padding: 10px 12px;
+        font-size: 1rem;
+    }
+}
