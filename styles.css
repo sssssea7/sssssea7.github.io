@@ -24,18 +24,20 @@ body { margin: 0; }
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* Sticky nav */
+/* Sticky nav (frosted glass) */
 .site-nav {
     position: sticky;
     top: 0;
-    background: var(--burgundy-soft);
+    background: rgba(251, 233, 235, 0.72);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
     padding: 14px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
     z-index: 100;
-    border-bottom: 1px solid #f1d6d9;
+    border-bottom: 1px solid rgba(241, 214, 217, 0.6);
 }
 .site-nav-brand {
     color: var(--burgundy);
